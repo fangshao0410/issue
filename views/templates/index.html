@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table border>
+    <tr>
+        <th>id</th>
+        <th>发布人</th>
+        <th>项目名</th>
+        <th>项目组</th>
+        <th>上传时间</th>
+        <th>项目url</th>
+        <th>类型</th>
+        <th>状态</th>
+        <th>操作</th>
+    </tr>
+    {% for release in release_list %}
+        <tr>
+            <td>{{ release.id }}</td>
+            {% if release.status.code=='1' %}
+                <td>{{ release.user.name }}</td>
+                {% else %}
+                <td></td>
+            {% endif %}
+            <td>{{ release.project.name }}</td>
+            <td>{{ release.project.department.name }}</td>
+            <td>{{ release.releaselog[0].logdatetime }}</td>
+            <td>{{ release.project.git_addr }}</td>
+            <td>{{ release.types.value }}</td>
+            <td>{{ release.status.value }}</td>
+            <td><button onclick="conn({{ release.id }},{{ release.status.code }})">确认发布</button></td>
+        </tr>
+    {% endfor %}
+    
+</table>
+
+
+{#<script src="{{ url_for('static',filename='jquery-3.3.1.min.js') }}"></script>#}
+<script>
+
+    function conn(id,status) {
+        if (status===2){
+            alert('发布成功')
+        }
+    }
+
+
+
+</script>
+
+
+
+</body>
+</html>

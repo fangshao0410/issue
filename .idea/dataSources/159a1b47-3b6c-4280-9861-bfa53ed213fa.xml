@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="issue@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="issue">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="conference"/>
+    <schema id="4" parent="1" name="day107"/>
+    <schema id="5" parent="1" name="day45"/>
+    <schema id="6" parent="1" name="day46"/>
+    <schema id="7" parent="1" name="day65"/>
+    <schema id="8" parent="1" name="information_schema"/>
+    <schema id="9" parent="1" name="kao"/>
+    <schema id="10" parent="1" name="mysql"/>
+    <schema id="11" parent="1" name="performance_schema"/>
+    <schema id="12" parent="1" name="sqlachemy"/>
+    <schema id="13" parent="1" name="test"/>
+    <schema id="14" parent="1" name="zuoye"/>
+    <schema id="15" parent="1" name="zuoye1"/>
+    <table id="16" parent="2" name="department"/>
+    <table id="17" parent="2" name="hosts"/>
+    <table id="18" parent="2" name="project"/>
+    <table id="19" parent="2" name="release"/>
+    <table id="20" parent="2" name="releaselog"/>
+    <table id="21" parent="2" name="user"/>
+    <column id="22" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="23" parent="16" name="name">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="16" name="code_number">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="16" name="edate">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="26" parent="16" name="ix_department_code_number">
+      <ColNames>code_number</ColNames>
+    </index>
+    <index id="27" parent="16" name="ix_department_edate">
+      <ColNames>edate</ColNames>
+    </index>
+    <index id="28" parent="16" name="ix_department_id">
+      <ColNames>id</ColNames>
+    </index>
+    <index id="29" parent="16" name="ix_department_name">
+      <ColNames>name</ColNames>
+    </index>
+    <key id="30" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="31" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="32" parent="17" name="hoatname">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="17" name="ip">
+      <Position>3</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="17" name="port">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="17" name="project_id">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="36" parent="17" name="ix_hosts_hoatname">
+      <ColNames>hoatname</ColNames>
+    </index>
+    <index id="37" parent="17" name="ix_hosts_id">
+      <ColNames>id</ColNames>
+    </index>
+    <index id="38" parent="17" name="ix_hosts_ip">
+      <ColNames>ip</ColNames>
+    </index>
+    <index id="39" parent="17" name="ix_hosts_port">
+      <ColNames>port</ColNames>
+    </index>
+    <index id="40" parent="17" name="ix_hosts_project_id">
+      <ColNames>project_id</ColNames>
+    </index>
+    <key id="41" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="42" parent="17" name="hosts_ibfk_1">
+      <ColNames>project_id</ColNames>
+      <RefSchemaName>issue</RefSchemaName>
+      <RefTableName>project</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="43" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="44" parent="18" name="name">
+      <Position>2</Position>
+      <DataType>varchar(120)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="18" name="git_addr">
+      <Position>3</Position>
+      <DataType>varchar(120)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="18" name="online_path">
+      <Position>4</Position>
+      <DataType>varchar(120)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="18" name="introduce">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="18" name="edatetime">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="18" name="department_id">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="50" parent="18" name="department_id">
+      <ColNames>department_id</ColNames>
+    </index>
+    <index id="51" parent="18" name="ix_project_online_path">
+      <ColNames>online_path</ColNames>
+    </index>
+    <key id="52" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="53" parent="18" name="project_ibfk_1">
+      <ColNames>department_id</ColNames>
+      <RefSchemaName>issue</RefSchemaName>
+      <RefTableName>department</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="54" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="55" parent="19" name="user_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="56" parent="19" name="project_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="19" name="types">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="19" name="status">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="59" parent="19" name="ix_release_id">
+      <ColNames>id</ColNames>
+    </index>
+    <index id="60" parent="19" name="ix_release_project_id">
+      <ColNames>project_id</ColNames>
+    </index>
+    <index id="61" parent="19" name="ix_release_status">
+      <ColNames>status</ColNames>
+    </index>
+    <index id="62" parent="19" name="ix_release_types">
+      <ColNames>types</ColNames>
+    </index>
+    <index id="63" parent="19" name="user_id">
+      <ColNames>user_id</ColNames>
+    </index>
+    <key id="64" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="65" parent="19" name="release_ibfk_1">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>issue</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="66" parent="19" name="release_ibfk_2">
+      <ColNames>project_id</ColNames>
+      <RefSchemaName>issue</RefSchemaName>
+      <RefTableName>project</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="67" parent="20" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="68" parent="20" name="logdatetime">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="20" name="release_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="70" parent="20" name="ix_releaselog_id">
+      <ColNames>id</ColNames>
+    </index>
+    <index id="71" parent="20" name="ix_releaselog_logdatetime">
+      <ColNames>logdatetime</ColNames>
+    </index>
+    <index id="72" parent="20" name="ix_releaselog_release_id">
+      <ColNames>release_id</ColNames>
+    </index>
+    <key id="73" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="74" parent="20" name="releaselog_ibfk_1">
+      <ColNames>release_id</ColNames>
+      <RefSchemaName>issue</RefSchemaName>
+      <RefTableName>release</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="75" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="76" parent="21" name="name">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="77" parent="21" name="pwd">
+      <Position>3</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="78" parent="21" name="department_id">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="79" parent="21" name="rdatetime">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="80" parent="21" name="department_id">
+      <ColNames>department_id</ColNames>
+    </index>
+    <index id="81" parent="21" name="ix_user_id">
+      <ColNames>id</ColNames>
+    </index>
+    <index id="82" parent="21" name="ix_user_name">
+      <ColNames>name</ColNames>
+    </index>
+    <index id="83" parent="21" name="ix_user_pwd">
+      <ColNames>pwd</ColNames>
+    </index>
+    <index id="84" parent="21" name="ix_user_rdatetime">
+      <ColNames>rdatetime</ColNames>
+    </index>
+    <key id="85" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="86" parent="21" name="user_ibfk_1">
+      <ColNames>department_id</ColNames>
+      <RefSchemaName>issue</RefSchemaName>
+      <RefTableName>department</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
